@@ -1,0 +1,25 @@
+{
+    "title": "Investeringskalkulator",
+    "description": "Beregn fremtidig verdi av investeringene dine",
+    "initialInvestment": "Startinvestering",
+    "annualReturn": "Årlig avkastning (%)",
+    "annualReturnTooltip": "Forventet årlig vekstrate for investeringen din",
+    "years": "Antall år",
+    "compoundingFrequency": "Rentefrekvens",
+    "compoundingFrequencyTooltip": "Hvor ofte rentes renten",
+    "annually": "Årlig",
+    "monthly": "Månedlig",
+    "daily": "Daglig",
+    "monthlyContributions": "Månedlige bidrag",
+    "inflationRate": "Årlig inflasjonsrate (%)",
+    "inflationRateTooltip": "Forventet årlig inflasjonsrate",
+    "results": "Resultater",
+    "futureValue": "Fremtidig verdi",
+    "inflationAdjustedValue": "Inflasjonsjustert verdi",
+    "totalContributions": "Totale bidrag",
+    "totalGain": "Total gevinst",
+    "langCode": "nb-NO",
+    "currencyCode": "NOK"
+  }
+  
+  

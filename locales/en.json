@@ -1,0 +1,24 @@
+{
+    "title": "Investment Calculator",
+    "description": "Calculate the future value of your investments",
+    "initialInvestment": "Initial Investment",
+    "annualReturn": "Annual Rate of Return (%)",
+    "annualReturnTooltip": "The expected annual growth rate of your investment",
+    "years": "Number of Years",
+    "compoundingFrequency": "Compounding Frequency",
+    "compoundingFrequencyTooltip": "How often the returns are compounded",
+    "annually": "Annually",
+    "monthly": "Monthly",
+    "daily": "Daily",
+    "monthlyContributions": "Monthly Contributions",
+    "inflationRate": "Annual Inflation Rate (%)",
+    "inflationRateTooltip": "The expected annual rate of inflation",
+    "results": "Results",
+    "futureValue": "Future Value",
+    "inflationAdjustedValue": "Inflation Adjusted Value",
+    "totalContributions": "Total Contributions",
+    "totalGain": "Total Gain",
+    "langCode": "en-IN",
+    "currencyCode": "EUR"
+  }
+  
