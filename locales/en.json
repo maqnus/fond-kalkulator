@@ -19,6 +19,17 @@
     "totalContributions": "Total Contributions",
     "totalGain": "Total Gain",
     "langCode": "en-IN",
-    "currencyCode": "EUR"
+    "currencyCode": "EUR",
+    "settings.dialogTrigger": "Settings",
+    "settings.dialogTitle": "Settings",
+    "settings.language.placeholder": "Select Language",
+    "settings.language.label": "Language",
+    "settings.language.english": "English",
+    "settings.language.norwegian": "Norwegian",
+    "settings.currency.placeholder": "Select currency",
+    "settings.currency.label": "Currency",
+    "settings.currency.eur": "EUR",
+    "settings.currency.usd": "USD",
+    "settings.currency.nok": "NOK"
   }
   

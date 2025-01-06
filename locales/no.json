@@ -19,7 +19,18 @@
     "totalContributions": "Totale bidrag",
     "totalGain": "Total gevinst",
     "langCode": "nb-NO",
-    "currencyCode": "NOK"
+    "currencyCode": "NOK",
+    "settings.dialogTrigger": "Innstillinger",
+    "settings.dialogTitle": "Innstillinger",
+    "settings.language.placeholder": "Velg språk",
+    "settings.language.label": "Språk",
+    "settings.language.english": "Engelsk",
+    "settings.language.norsk": "Norsk",
+    "settings.currency.placeholder": "Velg valuta",
+    "settings.currency.label": "Valuta",
+    "settings.currency.eur": "EUR",
+    "settings.currency.usd": "USD",
+    "settings.currency.nok": "NOK"
   }
   
   

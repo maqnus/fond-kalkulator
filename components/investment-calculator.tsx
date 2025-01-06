@@ -6,9 +6,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer } from 'recharts'
 import '../i18n'
 
@@ -19,6 +34,7 @@ export default function InvestmentCalculator() {
   const [initialInvestment, setInitialInvestment] = useState(10000)
   const [annualReturn, setAnnualReturn] = useState(7)
   const [years, setYears] = useState(10)
+  const [currency, setCurrency] = useState('USD');
   const [compoundingFrequency, setCompoundingFrequency] = useState('annually')
   const [contributions, setContributions] = useState(100)
   const [inflationRate, setInflationRate] = useState(2)
@@ -70,10 +86,41 @@ export default function InvestmentCalculator() {
             <CardTitle>{t('title')}</CardTitle>
             <CardDescription>{t('description')}</CardDescription>
           </div>
-          <div>
-            <Button onClick={() => changeLanguage('en')} className="mr-2">English</Button>
-            <Button onClick={() => changeLanguage('no')}>Norsk</Button>
-          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant={'outline'}>{t('settings.dialogTrigger')}</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>{t('settings.dialogTitle')}</DialogTitle>
+              </DialogHeader>
+              <Select onValueChange={(value: string) => changeLanguage(value)}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder={t('settings.language.placeholder')} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>{t('settings.language.label')}</SelectLabel>
+                    <SelectItem value="en">{t('settings.language.english')}</SelectItem>
+                    <SelectItem value="no">{t('settings.language.norwegian')}</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Select onValueChange={(value: string) => setCurrency(value)}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder={t('settings.currency.placeholder')} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>{t('settings.language.label')}</SelectLabel>
+                    <SelectItem value="EUR">{t('settings.currency.eur')}</SelectItem>
+                    <SelectItem value="USD">{t('settings.currency.usd')}</SelectItem>
+                    <SelectItem value="NOK">{t('settings.currency.nok')}</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </DialogContent>
+          </Dialog>
         </div>
       </CardHeader>
       <CardContent>
@@ -174,12 +221,12 @@ export default function InvestmentCalculator() {
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold">{t('results')}</h3>
-              <p>{t('futureValue')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency: t('currencyCode') }).format(
+              <p>{t('futureValue')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency }).format(
     futureValue,
   )}</p>
-              <p>{t('inflationAdjustedValue')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency: t('currencyCode') }).format(inflationAdjustedValue)}</p>
-              <p>{t('totalContributions')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency: t('currencyCode') }).format((initialInvestment + contributions * 12 * years))}</p>
-              <p>{t('totalGain')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency: t('currencyCode') }).format((futureValue - initialInvestment - contributions * 12 * years))}</p>
+              <p>{t('inflationAdjustedValue')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency }).format(inflationAdjustedValue)}</p>
+              <p>{t('totalContributions')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency }).format((initialInvestment + contributions * 12 * years))}</p>
+              <p>{t('totalGain')}: {new Intl.NumberFormat(t('langCode'), { style: 'currency', currency }).format((futureValue - initialInvestment - contributions * 12 * years))}</p>
             </div>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
